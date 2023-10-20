@@ -4,7 +4,7 @@ public class Mesa {
     int id_Mesas;
     int NumMesas;
 
-    public static void seleccionMesas{
+    public static void seleccionMesas(){
 
     }
 
