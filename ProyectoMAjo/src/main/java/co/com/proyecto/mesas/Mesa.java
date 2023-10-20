@@ -2,7 +2,7 @@ package co.com.proyecto.mesas;
 
 public class Mesa {
     int id_Mesas;
-    int NumMesas;
+    int numMesas;
 
     public static void seleccionMesas(){
 
@@ -17,10 +17,10 @@ public class Mesa {
     }
 
     public int getNumMesas() {
-        return NumMesas;
+        return numMesas;
     }
 
     public void setNumMesas(int numMesas) {
-        NumMesas = numMesas;
+        numMesas = numMesas;
     }
 }
