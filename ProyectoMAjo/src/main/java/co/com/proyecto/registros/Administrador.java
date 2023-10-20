@@ -1,5 +1,5 @@
 package co.com.proyecto.registros;
 
-public class Administrador {
+public class Administrador extends Registro {
 
 }
