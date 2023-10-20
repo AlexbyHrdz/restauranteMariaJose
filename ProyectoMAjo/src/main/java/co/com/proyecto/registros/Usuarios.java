@@ -1,4 +1,7 @@
 package co.com.proyecto.registros;
 
-public class Usuarios {
+public class Usuarios extends Registro{
+
+     
+
 }
