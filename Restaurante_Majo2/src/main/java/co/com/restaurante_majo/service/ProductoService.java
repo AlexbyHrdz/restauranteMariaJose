@@ -1,5 +1,6 @@
 package co.com.restaurante_majo.service;
 
+import co.com.restaurante_majo.dao.ProductoDao;
 import co.com.restaurante_majo.producto.Producto;
 
 import java.util.Scanner;
@@ -14,8 +15,6 @@ public class ProductoService {
         String descripcion = sc.nextLine();
         System.out.println("Ingrese el precio del producto: ");
         double precio = sc.nextDouble();
-        System.out.println("Ingrese el costo del producto: ");
-        double costo = sc.nextDouble();
         System.out.println("Ingrese la cantidad del producto: ");
         int cantidad = sc.nextInt();
 
@@ -24,7 +23,6 @@ public class ProductoService {
         registro.setNombreP(nombre);
         registro.setDescripcion(descripcion);
         registro.setPrecio(precio);
-        registro.setPrecio(costo);
         registro.setCantidad(cantidad);
 
         ProductoDao.crearProductoDB(registro);
@@ -37,7 +35,7 @@ public class ProductoService {
 
     public static void modificarProductoDB (){
         Producto update = new Producto();
-        System.out.println("Indique para modificar 1: nombre 2: descripcion 3: Precio 4:Costo 5: cantidad ");
+        System.out.println("Indique para modificar 1: nombre 2: descripcion 3: Precio 4: cantidad ");
         int opc = sc.nextInt();
         sc.skip("\n");
         int id;
@@ -82,19 +80,6 @@ public class ProductoService {
                 ProductoDao.modificarProductoDB(update);
                 break;
             case 4:
-                System.out.println("Selecciono Modificar Costo");
-                System.out.println("Ingrese nuevo valor");
-                double costo = sc.nextDouble();
-                System.out.println("Indique la id a actualizar");
-                id = sc.nextInt();
-                opc= 4;
-                update.setOpc(opc);
-
-                update.setPrecio(costo);
-                update.setId(id);
-                ProductoDao.modificarProductoDB(update);
-                break;
-            case 5:
                 System.out.println("Selecciono Modificar Cantidad");
                 System.out.println("Ingrese nuevo valor");
                 int cantidad = sc.nextInt();
