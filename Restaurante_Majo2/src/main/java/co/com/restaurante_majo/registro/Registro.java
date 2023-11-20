@@ -5,14 +5,19 @@ public class Registro {
     private String nombre;
     private String apellido;
     private int nunTen;
+    private String email;
+    private String passWord;
 
     // Contructor
     public Registro (){}
-    public Registro(int id, String nombre, String apellido, int nunTen) {
+
+    public Registro(int id, String nombre, String apellido, int nunTen, String email, String passWord) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.nunTen = nunTen;
+        this.email = email;
+        this.passWord = passWord;
     }
     //getter and setter
 
@@ -46,5 +51,21 @@ public class Registro {
 
     public void setNunTen(int nunTen) {
         this.nunTen = nunTen;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 }
