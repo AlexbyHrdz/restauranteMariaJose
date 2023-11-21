@@ -12,13 +12,15 @@ public class UsuarioService {
         String nombre = sc.nextLine();
         System.out.println("Ingrese el numero telefonico: ");
         int nunTel = sc.nextInt();
+        System.out.println("Ingrese el numero de mesa");
+        int numMesa = sc.nextInt();
 
 
         Registro dato = new Registro();
 
         dato.setNombre(nombre);
         dato.setNunTen(nunTel);
-
+        dato.setNumMesa(numMesa);
 
         UsuarioDao.crearUsuarioBD(dato);
     }
