@@ -16,10 +16,11 @@ public class UsuarioDao {
         try(Connection conexion = connect.get_connection()) {
             PreparedStatement ps =null;
             try {
-                String query = "INSERT INTO usuario(nombre,numero_telefono) values (?,?,)";
+                String query = "INSERT INTO usuario(nombre,numero_telefono) values (?,?,?)";
                 ps = conexion.prepareStatement(query);
                 ps.setString(1, dato.getNombre());
                 ps.setInt(2, dato.getNunTen());
+                ps.setInt(3, dato.getNumMesa());
                 ps.executeUpdate();
                 System.out.println("Registro Exitoso");
             }catch (SQLException e){

@@ -19,7 +19,7 @@ public class ProductoDao {
 
             try {
 
-                String query = "INSERT INTO producto(Nombre, Descripcion, Precio,  Cantidad) VALUES (?,?,?,?)";
+                String query = "INSERT INTO producto(Nombre_Productos, Descripcion, Precio_Producto,  Cantidad_Producto) VALUES (?,?,?,?)";
 
                 ps = conexion.prepareStatement(query);
 
@@ -59,12 +59,11 @@ public class ProductoDao {
 
             while(rs.next()){
 
-                System.out.println("Id Producto" + rs.getInt("Id"));
-                System.out.println("Nombre de producto"+ rs.getString("Nombre"));
+                System.out.println("Id Producto" + rs.getInt("id"));
+                System.out.println("Nombre de producto"+ rs.getString("Nombre_Productos"));
                 System.out.println("Descripcion de productos"+rs.getString("Descripcion"));
-                System.out.println("Precio de producto" + rs.getDouble("Precio"));
-                System.out.println("Costo de prodcuto"+rs.getDouble("Costo"));
-                System.out.println("Cantidad de producto"+rs.getDouble("Cantidad"));
+                System.out.println("Precio de producto" + rs.getDouble("Precio_Producto"));
+                System.out.println("Cantidad de producto"+rs.getInt("Cantidad_Producto"));
 
 
             }
@@ -84,7 +83,7 @@ public class ProductoDao {
                 int opc = update.getOpc();
                 System.out.println(opc);
                 if(opc==1) {
-                    String query = "UPDATE producto SET Nombre =? Where Id=?";
+                    String query = "UPDATE producto SET Nombre_Productos =? Where Id=?";
                     ps = connect.prepareStatement(query);
                     ps.setString(1, update.getNombreP());
                     ps.setInt(2, update.getId());
@@ -96,19 +95,13 @@ public class ProductoDao {
                     ps.setInt(2, update.getId());
                     ps.executeUpdate();
                 } else if (opc== 3) {
-                    String query = "UPDATE producto SET Precio =? Where Id=?";
+                    String query = "UPDATE producto SET Precio_Producto =? Where Id=?";
                     ps = connect.prepareStatement(query);
                     ps.setDouble(1, update.getPrecio());
                     ps.setInt(2, update.getId());
                     ps.executeUpdate();
                 } else if (opc==4) {
-                    String query = "UPDATE producto SET Costo =? Where Id=?";
-                    ps = connect.prepareStatement(query);
-                    ps.setDouble(1, update.getPrecio());
-                    ps.setInt(2, update.getId());
-                    ps.executeUpdate();
-                } else if (opc==5) {
-                    String query = "UPDATE producto SET Cantidad =? Where Id=?";
+                    String query = "UPDATE producto SET Cantidad_Producto =? Where Id=?";
                     ps = connect.prepareStatement(query);
                     ps.setDouble(1, update.getCantidad());
                     ps.setInt(2, update.getId());
