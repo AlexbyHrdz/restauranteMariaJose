@@ -5,6 +5,7 @@ import co.com.restaurante_majo.service.UsuarioService;
 
 public class TestUsuarioMenu {
     public static void main(String[] args) {
+
         UsuarioService.crearUsuarioDB();
         MesasService.listasMesasDisponiblesBD();
         MesasService.modificarMesaBD();
