@@ -16,7 +16,7 @@ public class UsuarioDao {
         try(Connection conexion = connect.get_connection()) {
             PreparedStatement ps =null;
             try {
-                String query = "INSERT INTO registro(Nombre,Numero_Telefono) values (?,?,?)";
+                String query = "INSERT INTO registro(Nombre,Numero_Telefono,Numero_mesa) values (?,?,?)";
                 ps = conexion.prepareStatement(query);
                 ps.setString(1, dato.getNombre());
                 ps.setInt(2, dato.getNunTen());

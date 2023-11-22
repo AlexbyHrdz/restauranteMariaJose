@@ -9,8 +9,10 @@ public class Factura {
     private int cantidadProductos;
     private double totalCompra;
 
+
+
     //Constructores
-    public void Factura(){}
+    public Factura() {}
 
     public Factura(int id, String nombreUsuario, int mesa, String nombreProducto, double precioProductos, int cantidadProductos, double totalCompra) {
         this.id = id;
