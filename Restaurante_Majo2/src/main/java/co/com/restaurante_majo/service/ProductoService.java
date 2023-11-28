@@ -35,7 +35,10 @@ public class ProductoService {
 
     public static void modificarProductoDB (){
         Producto update = new Producto();
-        System.out.println("Indique para modificar 1: nombre 2: descripcion 3: Precio 4: cantidad ");
+        System.out.println("Indique para modificar 1: nombre\n" +
+                " 2: descripcion \n" +
+                "3: Precio \n" +
+                "4: cantidad \n");
         int opc = sc.nextInt();
         sc.skip("\n");
         int id;

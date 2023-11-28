@@ -6,7 +6,7 @@ public class TestMesa {
     public static void main(String[] args) {
 
         MesasService.listasMesasDisponiblesBD();
-        MesasService.modificarMesaBD();
+
 
     }
 }

@@ -8,6 +8,6 @@ public class TestUsuarioMenu {
 
         UsuarioService.crearUsuarioDB();
         MesasService.listasMesasDisponiblesBD();
-        MesasService.modificarMesaBD();
+
     }
 }

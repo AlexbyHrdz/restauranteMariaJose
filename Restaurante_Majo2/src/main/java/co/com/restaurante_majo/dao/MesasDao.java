@@ -2,7 +2,6 @@ package co.com.restaurante_majo.dao;
 
 import co.com.restaurante_majo.conexion.Conexion;
 import co.com.restaurante_majo.mesas.Mesas;
-import co.com.restaurante_majo.producto.Producto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,7 +27,7 @@ public class MesasDao {
         }
     }
 
-    public static void modificarMesaDB(Mesas update) {
+    public static void estadoMesaDB(Mesas update) {
         Conexion conexion = new Conexion();
         try (Connection connect = conexion.get_connection()) {
             try {
@@ -41,6 +40,46 @@ public class MesasDao {
             }catch (SQLException e) {
                 System.out.println(e);
                 System.out.println("No fue posible  actualizo el registro");
+            }
+
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+
+    }
+    public static void modificarProductoDB (Mesas update){
+        Conexion conexion = new Conexion();
+        try(Connection connect = conexion.get_connection()){
+            try {
+                PreparedStatement ps =null;
+                    String query = "UPDATE Mesa SET id_Numero_Mesa =? Where Id=?";
+                    ps = connect.prepareStatement(query);
+                    ps.setInt(1, update.getNunMesas());
+                    ps.setInt(2, update.getId());
+                    ps.executeUpdate();
+                } catch (SQLException e) {
+                System.out.println(e);
+                System.out.println("No fue posible  actualizo el registro");
+            }
+
+        }catch (SQLException e){
+            System.out.println(e);
+        }
+
+    }
+    public static void eliminarMesaDB (int id){
+        Conexion conexion= new Conexion();
+        try(Connection connect = conexion.get_connection()){
+            PreparedStatement ps= null;
+            try{
+                String querry = "DELETE FROM  Mesa where Mesa.id=?";
+                ps = connect.prepareStatement(querry);
+                ps.setInt(1,id);
+                ps.executeUpdate();
+                System.out.println("El registro se elimino correctamente");
+            }catch (SQLException e){
+                System.out.println("No se elimino");
+                System.out.println(e);
             }
 
         }catch (SQLException e){
