@@ -10,7 +10,7 @@ public class MesasService {
     MesasDao mesasDao = new MesasDao();
     static Scanner sc = new Scanner(System.in);
         public static void listasMesasDisponiblesBD(){
-            MesasDao.ListarProductoDB();
+            MesasDao.ListarMesas();
         }
         public static void estadoMesaBD(){
             Mesas update = new Mesas();
@@ -24,7 +24,7 @@ public class MesasService {
             update.setId(id);
             MesasDao.estadoMesaDB(update);
         }
-    public static void modificarProductoDB (){
+    public static void modificarNumMesa(){
        Mesas update = new Mesas();
         int id;
                 System.out.println("Selecciono Modificar Numero mesas");
@@ -36,7 +36,7 @@ public class MesasService {
 
                 update.getNunMesas();
                 update.setId(id);
-                MesasDao.modificarProductoDB(update);
+                MesasDao.modificarNunMEsa(update);
         }
     public static void eliminarMesaDB (){
         System.out.println("Indidque la id de la mesa que quiere eliminar");

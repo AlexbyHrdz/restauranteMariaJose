@@ -10,7 +10,7 @@ public class Conexion {
         Connection connect = null;
 
         try {
-            connect = DriverManager.getConnection("jdbc:mysql: //Localhost:3306/majo", "root", "");
+            connect = DriverManager.getConnection("jdbc:mysql: //Localhost:3306/majo_restaurante", "root", "");
             if (connect != null) {
                 System.out.println("La conexion ha sido exitosa");
             }

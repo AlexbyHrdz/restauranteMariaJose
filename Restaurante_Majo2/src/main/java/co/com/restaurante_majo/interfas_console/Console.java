@@ -3,9 +3,8 @@ package co.com.restaurante_majo.interfas_console;
 import co.com.restaurante_majo.administrador.Admin;
 import co.com.restaurante_majo.dao.FacturaDao;
 import co.com.restaurante_majo.dao.ProductoDao;
-import co.com.restaurante_majo.service.FacturaService;
-import co.com.restaurante_majo.service.MesasService;
-import co.com.restaurante_majo.service.ProductoService;
+import co.com.restaurante_majo.menu_pedido.MenuPedido;
+import co.com.restaurante_majo.service.*;
 
 import java.util.Scanner;
 
@@ -26,14 +25,10 @@ public class Console {
             int opc = sc.nextInt();
             switch (opc) {
                 case 1:
-                    Admin admin = new Admin();
-                    if (admin.getEmail().equals(admin.getEmail()) && admin.getPassword().equals(admin.getPassword()) ){
-                        opcionAdmin();
-                    }else{
-                        System.out.println("No es administrador");
-                    }
+                    Admin.inicioSecion();
                     break;
                 case 2:
+                    UsuarioService.crearUsuarioDB();
                     opcionesUsuario();
                     break;
                 default:
@@ -47,6 +42,7 @@ public class Console {
     }
 
     public static void opcionesUsuario() {
+
         int opc;
         do{
 
@@ -62,11 +58,13 @@ public class Console {
             switch (opc) {
                 case 1:
                     System.out.println("Seleciono marcar mesa");
+                    MesasService.listasMesasDisponiblesBD();
                     MesasService.estadoMesaBD();
                     break;
                 case 2:
                     System.out.println("Seleciono el menu");
                     ProductoDao.ListarProductosDB();
+                    MenuPedidoServicio.crearMenuPedido();
                     break;
                 case 3:
                     System.out.println("Seleciono Factura");
@@ -193,7 +191,6 @@ public class Console {
             System.out.println("1. Ver pedidos");
             System.out.println("2. Modificar pedidos");
             System.out.println("3. Eliminar pedidos");
-            System.out.println("4. Actualizar pedidos");
             System.out.println("0. Volver al Menú Principal");
             System.out.println("Selecciona una opción:");
 
@@ -201,16 +198,13 @@ public class Console {
 
             switch (opc) {
                 case 1:
-
+                     MenuPedidoServicio.listasPedido();
                     break;
                 case 2:
-
+                    MenuPedidoServicio.modificarProductoDB();
                     break;
                 case 3:
-
-                    break;
-                case 4:
-
+                    MenuPedidoServicio.eliminarPedido();
                     break;
                 case 0:
                     System.out.println("Volviendo al Menú Principal.");
@@ -233,7 +227,7 @@ public class Console {
 
             switch (opc) {
                 case 1:
-
+                    FacturaService.ListarFacturaDB();
                     break;
                 case 0:
                     System.out.println("Volviendo al Menú Principal.");

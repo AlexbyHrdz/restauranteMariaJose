@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MesasDao {
-    public static void ListarProductoDB() {
+    public static void ListarMesas() {
         Conexion conexion = new Conexion();
         PreparedStatement ps = null;
 
@@ -20,6 +20,7 @@ public class MesasDao {
             rs = ps.executeQuery();
             while (rs.next()) {
                 System.out.println("ID Mesas disponibles" + rs.getInt("id"));
+                System.out.println("Estado de la mesa"+rs.getString("estado"));
             }
         } catch (SQLException e) {
             System.out.println("No se encontraron registros de mesas");
@@ -47,12 +48,12 @@ public class MesasDao {
         }
 
     }
-    public static void modificarProductoDB (Mesas update){
+    public static void modificarNunMEsa(Mesas update){
         Conexion conexion = new Conexion();
         try(Connection connect = conexion.get_connection()){
             try {
                 PreparedStatement ps =null;
-                    String query = "UPDATE Mesa SET id_Numero_Mesa =? Where Id=?";
+                    String query = "UPDATE Mesa SET Numero_Mesa =? Where Id=?";
                     ps = connect.prepareStatement(query);
                     ps.setInt(1, update.getNunMesas());
                     ps.setInt(2, update.getId());
@@ -87,4 +88,5 @@ public class MesasDao {
         }
 
     }
+
 }

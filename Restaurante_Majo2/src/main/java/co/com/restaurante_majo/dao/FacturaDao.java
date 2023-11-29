@@ -16,7 +16,10 @@ public class FacturaDao {
             try {
                 PreparedStatement ps= null;
 
-                String query = "SELECT * From Factura";
+                String query = "select Registro.id, Mesa.id,Producto.id_Producto,Producto.Precio_Producto from Factura " +
+                        "inner join Registro on Registro.Nombre = Factura.id_Registro " +
+                        "inner join Producto on Producto.Nombre_Productos = Factura.id_Producto and Producto.Precio_Producto = Factura.id_Producto " +
+                        "inner join Mesa on Mesa.Numero_Mesa = Factura.id_Numero_Mesa";
                 ps = connect.prepareStatement(query);
                  rs = ps.executeQuery();
                 while (rs.next()) {

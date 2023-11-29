@@ -9,6 +9,8 @@ public class ProductoService {
     static Scanner sc = new Scanner(System.in);
 
     public static void crearProductoDB (){
+        System.out.println("Ingrese id del producto");
+        int id = sc.nextInt();
         System.out.println("Ingrese el nombre del producto: ");
         String nombre = sc.nextLine();
         System.out.println("Ingrese la descripcion del producto: ");
@@ -20,6 +22,7 @@ public class ProductoService {
 
         Producto registro = new Producto();
 
+        registro.setId(id);
         registro.setNombreP(nombre);
         registro.setDescripcion(descripcion);
         registro.setPrecio(precio);
