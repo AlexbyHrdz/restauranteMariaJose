@@ -20,7 +20,7 @@ public class MenuPedidoServicio {
         System.out.println("Ingrese el nombre del producto: ");
         String nombreProduco = sc.next();
         System.out.println("Ingrese el comentario ");
-        String comentario = sc.next();
+        String comentario = sc.nextLine();
 
         MenuPedido registro = new MenuPedido();
 
@@ -32,9 +32,7 @@ public class MenuPedidoServicio {
 
         MenuPedidoDao.crearPedido(registro);
     }
-    public static void listasPedido(){
-        MenuPedidoServicio.listasPedido();
-    }
+    public static void listasPedido(){MenuPedidoDao.listarMenuPedido();}
     public static void modificarProductoDB (){
         MenuPedido update =new MenuPedido();
         System.out.println("Indique para modificar 1: nombre\n" +
@@ -119,6 +117,6 @@ public class MenuPedidoServicio {
     public static void eliminarPedido(){
         System.out.println("Indidque la id del producto que quiere eliminar");
         int idPedido = sc.nextInt();
-        ProductoDao.eliminarProductoDB(idPedido);
+        MenuPedidoDao.eliminarPedido(idPedido);
     }
 }

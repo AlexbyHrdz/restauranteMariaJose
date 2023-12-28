@@ -22,6 +22,7 @@ public class Factura {
         this.precioProductos = precioProductos;
         this.cantidadProductos = cantidadProductos;
         this.totalCompra = totalCompra;
+        //
     }
     //Getter and Setter
 

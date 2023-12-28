@@ -21,7 +21,7 @@ public class MenuPedidoDao {
 
             try {
 
-                String query = "INSERT INTO menu_pedido(id, Numero_Mesa,Nombre_Usuario,Nombre_Producto ,Comentarios) VALUES (?,?,?,?,?)";
+                String query = "INSERT INTO menu_pedido(id ,Nombre_Usuario,Nombre_Producto ,Comentarios) VALUES (?,?,?,?)";
 
                 ps = conexion.prepareStatement(query);
 
@@ -29,7 +29,7 @@ public class MenuPedidoDao {
 
                /* ps.setInt(2, registro.getNumeroMesa());*/
 
-                ps.setInt(2, registro.getNumeroRegistro());
+               // ps.setInt(2, registro.getNumeroRegistro());
 
                 ps.setString(3, registro.getNombreUsuario());
 
@@ -65,8 +65,7 @@ public class MenuPedidoDao {
             while(rs.next()){
 
                 System.out.println("Id:" + rs.getInt("id"));
-                System.out.println("Numero Mesa:"+ rs.getInt("Numero_Mesa"));
-                System.out.println("Numero Registro"+rs.getInt("Numero_Registro"));
+
                 System.out.println("Nombre Usuario" + rs.getString("Nombre_Usuario"));
                 System.out.println("Nombre Producto"+rs.getString("Nombre_Producto"));
                 System.out.println("Comentario"+rs.getString("Comentarios"));

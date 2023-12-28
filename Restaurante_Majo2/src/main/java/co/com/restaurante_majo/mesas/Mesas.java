@@ -11,7 +11,7 @@ public class Mesas {
 
     }
 
-
+    //Constructor
     public Mesas(int id, int nunMesas, String estado) {
         this.id = id;
         this.nunMesas = nunMesas;

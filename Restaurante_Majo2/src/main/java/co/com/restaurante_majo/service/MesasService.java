@@ -20,6 +20,7 @@ public class MesasService {
             System.out.println("Selecione la id de la mesa a ocupar");
             int id = sc.nextInt();
             if(id == id){estado= "ocupado";}
+
             update.setEstado(estado);
             update.setId(id);
             MesasDao.estadoMesaDB(update);

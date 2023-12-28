@@ -19,8 +19,8 @@ public class MesasDao {
             ps = connect.prepareStatement(query);
             rs = ps.executeQuery();
             while (rs.next()) {
-                System.out.println("ID Mesas disponibles" + rs.getInt("id"));
-                System.out.println("Estado de la mesa"+rs.getString("estado"));
+                System.out.println("ID Mesas disponibles: " + rs.getInt("id"));
+                System.out.println("Estado de la mesa: "+rs.getString("estado"));
             }
         } catch (SQLException e) {
             System.out.println("No se encontraron registros de mesas");
